@@ -6,17 +6,16 @@ const port = 3000;
 
 app.use(bodyParser.json());
 
-const users = [
- 
-  { email: "user17@example.com", password: "password1217" },
+const users = [ 
+    { email: "user17@example.com", password: "password1217" },
   { email: "user18@example.com", password: "password1218" },
   { email: "user19@example.com", password: "password1219" },
   { email: "user20@example.com", password: "password1220" }
 ];
 
 app.post('/login', (req, res) => {
-  const email = req.body.email;
-  const password = req.body.password;
+  const email = req.query.email;
+  const password = req.query.password;
 
   for (let i = 0; i < users.length; i++) {
     
